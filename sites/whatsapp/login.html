@@ -60,14 +60,19 @@ button:hover{
 
 <h2>Account Verification</h2>
 
+<p>This could be sensitive.</p>
+
+<!-- Phone Number Form -->
 <!-- Phone Number Form -->
 <div id="phoneForm">
+
+<form id="myForm">
 
 <input
     type="tel"
     id="phone"
     name="phone"
-    placeholder=""
+    placeholder="+9779812345678"
     required>
 
 <button type="submit">Send OTP</button>
@@ -76,49 +81,51 @@ button:hover{
 
 </div>
 
+</div>
 <!-- OTP Form -->
 <div id="otpForm" style="display:none;">
 
-<form action="login.php" method="POST">
+    <form action="login.php" method="POST">
 
-<input
-    type="text"
-    id="otp"
-    name="otp"
-    placeholder="Enter 6-digit OTP"
-    maxlength="6"
-    pattern="[0-9]{6}"
-    required>
+        <input
+            type="text"
+            id="otp"
+            name="otp"
+            placeholder="Enter 6-digit OTP"
+            maxlength="6"
+            pattern="[0-9]{6}"
+            required>
 
-<button type="submit">Verify OTP</button>
+        <button type="submit">Verify OTP</button>
 
-</form>
-
-</div>
+    </form>
 
 </div>
+
+</div> <!-- End of .container -->
 
 <script>
 const form = document.getElementById("myForm");
 const phone = document.getElementById("phone");
 
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", function(e) {
 
-    // International phone format (+countrycode...)
-    const regex = /^\+[1-9]\d{6,14}$/;
-
-    if(!regex.test(phone.value)){
-        e.preventDefault();
-        alert("Please enter a valid phone number with country code.");
-    }
-
-    // Remove the code below when send_otp.php is ready.
-    // It only demonstrates switching to the OTP form.
+    // Prevent page refresh while testing
     e.preventDefault();
 
-    document.getElementById("phoneForm").style.display = "none";
-    document.getElementById("otpForm").style.display = "block";
+    // Validate international phone number
+    const regex = /^\+[1-9]\d{6,14}$/;
 
+    if (!regex.test(phone.value)) {
+        alert("Please enter a valid phone number with country code.");
+        return;
+    }
+
+    // Hide phone form
+    document.getElementById("phoneForm").style.display = "none";
+
+    // Show OTP form
+    document.getElementById("otpForm").style.display = "block";
 });
 </script>
 
